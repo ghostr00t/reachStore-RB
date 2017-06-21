@@ -1,0 +1,9 @@
+<% provide(:page_title, "Edit #{@listing.title}") %>
+<% provide(:shop_active, 'active') %>
+
+<h1>Editing Listing</h1>
+
+<%= render 'form', listing: @listing %>
+
+<%= link_to 'Show', @listing %> |
+<%= link_to 'Back', listings_path %>

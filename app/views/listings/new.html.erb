@@ -1,0 +1,8 @@
+<% provide(:page_title, 'New Listing') %>
+<% provide(:shop_active, 'active') %>
+
+<h1>New Listing</h1>
+
+<%= render 'form', listing: @listing %>
+
+<%= link_to 'Back', listings_path %>
