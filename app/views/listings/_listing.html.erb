@@ -1,0 +1,11 @@
+<div class='col-sm-6 col-lg-4'>
+  <div class="card">
+    <div class="card-topper" style='background-image: url(<%= listing.banner_image_url %>);'></div>
+    <div class="card-block">
+      <h4 class="card-title"><%= link_to listing.title, listing %></h4>
+      <p class="published-date">Date</p>
+      <p class="card-text"><%= truncate(listing.description, length: 130) %></p>
+      <%= link_to 'Read', listing, class: 'btn btn-read' %>
+    </div>
+  </div>
+</div>
