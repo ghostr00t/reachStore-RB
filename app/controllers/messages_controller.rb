@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+  def index
+    @message = Message.new
+  end
+
   def new
     @message = Message.new
   end
@@ -8,7 +12,7 @@ class MessagesController < ApplicationController
 
     if @message.valid?
       MessageMailer.contact_me(@message).deliver_now
-      redirect_to messages_new_url, notice: "Message received"
+      redirect_to messages_url, notice: "Message received"
     else
       render :new
     end
@@ -16,6 +20,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-      arams.require(:message).permit(:name, :email, :body)
+      params.require(:message).permit(:name, :email, :body)
   end
 end
